@@ -1,67 +1,368 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Collera_Drill 1</title>
+<title>Seriously Unserious</title>
+<link href="https://fonts.googleapis.com/css2?family=Ribeye&family=Yuji+Mai&display=swap" rel="stylesheet">
 
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("https://cdn.discordapp.com/attachments/1207660497269170286/1551118272186032238/Untitled_design_7.png?ex=6ab0cef6&is=6aaf7d76&hm=0721cd03d4ae72830cbc448ed6799749a86c865554d1c55caa6c97cb060cc008&");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Ribeye', cursive;
+}
+
+#photo {
+    width: 850px;
+    max-width: 95%;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffd1df;
+    border: 10px solid #ff9fbc;
+    border-right: 10px solid orange;
+    border-bottom: 10px solid orange;
+    text-align: center;
+}
+
+#photo h1 {
+    font-family: 'Yuji Mai', cursive;
+    font-size: 55px;
+    margin-top: 0;
+}
+
+#photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+#description {
+    width: 850px;
+    max-width: 95%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+#description img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+#portfolios {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    margin: 70px auto;
+    max-width: 1000px;
+}
+
+#sofia,
+#tyra {
+    width: 440px;
+    height: 480px;
+    padding: 25px;
+    background-color: #ffd1df;
+    border: 10px solid #ff9fbc;
+    border-right: 10px solid orange;
+    border-bottom: 10px solid orange;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#sofia h2,
+#tyra h2 {
+    font-family: 'Yuji Mai', cursive;
+    font-size: 38px;
+    margin: 0 0 25px 0;
+    height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sofia-work,
+#tyra-work {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#sofia-work div,
+#tyra-work div {
+    width: 170px;
+    height: 170px;
+    background-color: white;
+    border: 5px solid #ffb6c9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#sofia-work img,
+#tyra-work img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#sofia > p,
+#tyra > p {
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+#rating {
+    width: 850px;
+    max-width: 95%;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: #fff0f5;
+    border: 5px solid pink;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#rating h2 {
+    font-family: 'Yuji Mai', cursive;
+    font-size: 40px;
+    margin-top: 0;
+}
+
+#ratings {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+#ghai-rating,
+#tyra-rating {
+    width: 300px;
+}
+
+#ghai-rating h3,
+#tyra-rating h3 {
+    font-family: 'Yuji Mai', cursive;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.stars button {
+    font-family: serif;
+    font-size: 45px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #d8d8d8;
+    transition: 0.2s;
+}
+
+.stars button:hover {
+    transform: scale(1.2);
+}
+
+.stars button.selected {
+    color: #ffd43b;
+}
+
+#rating p {
+    font-size: 22px;
+}
+
+#feedback {
+    width: 650px;
+    max-width: 95%;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: #ffd1df;
+    border: 5px solid #ff9fbc;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#feedback h2 {
+    font-family: 'Yuji Mai', cursive;
+    font-size: 38px;
+    margin-top: 0;
+}
+
+#feedback textarea {
+    width: 90%;
+    height: 120px;
+    padding: 10px;
+    font-family: 'Ribeye', cursive;
+    font-size: 20px;
+    border: 3px solid pink;
+    border-radius: 10px;
+    resize: none;
+}
+
+#feedback button {
+    margin-top: 15px;
+    padding: 10px 30px;
+    font-family: 'Ribeye', cursive;
+    font-size: 22px;
+    font-weight: 600;
+    background-color: pink;
+    border: 3px solid #ff9fbc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    #portfolios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sofia,
+    #tyra {
+        width: 90%;
+    }
+
+    #ratings {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+}
+</style>
 </head>
-<body style="background-color: beige;"></body>
 
-<h1 style="color:crimson; text-align: center;">Mobile App Recommendations by Sofia Ghaissani Collera</h1>
-<p style="text-align: center; font-size:larger">Here are the applications recommended by our team:</p>
-<ol>
+<body>
 
-<li id="app" style="color: navy;"> <strong>Mobile Legends: Bang Bang </strong></li> <br>
+<div id="photo">
+    <h1>Seriously Unserious</h1>
+    <img src="https://cdn.discordapp.com/attachments/1207660497269170286/1551138423878975508/exasc-removebg-preview.png?ex=6ab0e1bb&is=6aaf903b&hm=13ed25edbe13e29144a42f012de8cef24587a424f094b0e62e3094ab5a8ac477&" alt="Ghaissani and Tyra">
+</div>
 
-<ul>
+<div id="description">
+    <img src="https://cdn.discordapp.com/attachments/1207660497269170286/1551133779257729164/wswswsw-removebg-preview.png?ex=6ab0dd67&is=6aaf8be7&hm=71757af2439473616fe7d9e7f6f32be2aff26c56efd96c0c5f9f24b6bd6a2f85&" alt="Our Portfolio: Seriously Unserious">
+</div>
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBzqxRrvw5Ri7ZZUp64SXLTq0uesq52Iiy40YfX2ubxGvADnB"width="500" height="300"><br>
+<section id="portfolios">
 
-<li> <strong>Mobile Legends: Bang Bang</strong> is a <span style="color: crimson;">5v5</span> mobile multiplayer online battle arena (MOBA) game developed by Moonton.<br>Two teams of five players fight across three distinct lanes to destroy the enemy base while defending their own.</li>
+    <div id="sofia">
+        <h2>Ghaissani's Portfolio</h2>
 
-<br>
+        <div id="sofia-work">
+            <div>
+                <img src="https://storage.googleapis.com/oa_disk001/oblaspinas/69/classfeed/3651/submissions/1788937159-1219.png" alt="Ghaissani's Work 1">
+            </div>
 
-Press <a href="https://mobile-legends.en.aptoide.com/app" target="_blank">here</a> to download the app and enjoy!
-</ul>
+            <div>
+                <img src="https://storage.googleapis.com/oa_disk001/oblaspinas/69/classfeed/3651/submissions/1788318694-183.png" alt="Ghaissani's Work 2">
+            </div>
+        </div>
 
-<br>
+        <p>Here are some of my projects and creative works!</p>
+    </div>
 
-<li id="app" style="color: navy;"> <strong>Valorant</strong></li> <br>
-<ul>
-<img src="https://store-images.s-microsoft.com/image/apps.44472.13663857844271189.86bf8848-7dfd-487b-bd91-d633447aeada.bcc2ad6e-75f4-4075-a5ed-9af6975b27ec?w=307"width="500" height="300"><br>
-<li> <strong>Valorant</strong> is a <span style="color: crimson;">5v5</span> tactical first-person shooter game developed by Riot Games.<br>Players take on the role of "Agents" with unique abilities and work together to complete objectives.</li>
+    <div id="tyra">
+        <h2>Tyra's Portfolio</h2>
 
-<br>
+        <div id="tyra-work">
+            <div>
+                <img src="https://cdn.discordapp.com/attachments/1207660497269170286/1551139718253650021/1788922888-162.png?ex=6ab0e2ef&is=6aaf916f&hm=ad987368626c88533270c5868d93b7f1bdcc1a650e957e13777ec49e9e8a92cb&" alt="Tyra's Work 1">
+            </div>
 
-Press <a href="https://playvalorant.com/en-us/download/" target="_blank">here</a> to download the app and enjoy!
-</ul>
+            <div>
+                <img src="https://cdn.discordapp.com/attachments/1207660497269170286/1551139403311878164/1788318749-2220.png?ex=6ab0e2a4&is=6aaf9124&hm=94b14ba5ffc15ee7bdbc58c3791bf1972343f99a8c9e90df4989c28eb1c97217&" alt="Tyra's Work 2">
+            </div>
+        </div>
 
-<br>
-<li id="app" style="color: navy;"> <strong>Skull Girls</strong></li> <br>
+        <p>Here are some of my projects and creative works!</p>
+    </div>
 
-<ul>
+</section>
 
-<img src="https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/skullgirls_2nd_encore.png"width="500" height="300"><br>
-<li> <strong>Skull Girls</strong> is a <span style="color: crimson;">2v2</span> fighting game developed by Flying Buffalo.<br>Players control characters with unique fighting styles and abilities in competitive matches.</li>
+<div id="rating">
 
-<br>
+    <h2>Rate Our Portfolio!</h2>
 
-Press <a href="https://store.steampowered.com/app/245170/Skullgirls/" target="_blank">here</a> to download the app and enjoy!
-</ul>
-</ol>
+    <div id="ratings">
 
-<h1 style="color:crimson; text-align: center;">Thank you for visiting!</h1>
-<p style="text-align: center; font-size:larger">Here are the links to the applications recommended by our team:</p>
-<ul>
-    <li><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBzqxRrvw5Ri7ZZUp64SXLTq0uesq52Iiy40YfX2ubxGvADnB" target="_blank">Mobile Legends: Bang Bang</a></li>
-    <li><a href="https://mobile-legends.en.aptoide.com/app" target="_blank">Mobile Legends: Bang Bang - Aptoide</a></li>
-    <li><a href="https://store-images.s-microsoft.com/image/apps.44472.13663857844271189.86bf8848-7dfd-487b-bd91-d633447aeada.bcc2ad6e-75f4-4075-a5ed-9af6975b27ec?w=307" target="_blank">Valorant</a></li>
-    <li><a href="https://playvalorant.com/en-us/download/" target="_blank">Valorant - Download</a></li>
-    <li><a href="https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/skullgirls_2nd_encore.png" target="_blank">Skull Girls</a></li>
-    <li><a href="https://store.steampowered.com/app/245170/Skullgirls/" target="_blank">Skull Girls - Steam</a></li>
-</ul>
+        <div id="ghai-rating">
+            <h3>Ghaissani</h3>
+
+            <div class="stars">
+                <button onclick="rate(this)">☆</button>
+                <button onclick="rate(this)">☆</button>
+                <button onclick="rate(this)">☆</button>
+                <button onclick="rate(this)">☆</button>
+                <button onclick="rate(this)">☆</button>
+            </div>
+        </div>
+
+        <div id="tyra-rating">
+            <h3>Tyra</h3>
+
+            <div class="stars">
+                <button onclick="rate(this)">☆</button>
+                <button onclick="rate(this)">☆</button>
+                <button onclick="rate(this)">☆</button>
+                <button onclick="rate(this)">☆</button>
+                <button onclick="rate(this)">☆</button>
+            </div>
+        </div>
+
+    </div>
+
+    <p>How seriously unserious are we?</p>
+
+</div>
+
+<div id="feedback">
+
+    <h2>Leave Us Some Feedback!</h2>
+
+    <textarea placeholder="Write something nice... or unserious!"></textarea>
+
+    <br>
+
+    <button>Submit</button>
+
+</div>
+
+<script>
+function rate(star) {
+    let stars = star.parentElement.children;
+    let clicked = Array.from(stars).indexOf(star);
+
+    for (let i = 0; i < stars.length; i++) {
+        if (i <= clicked) {
+            stars[i].classList.add("selected");
+            stars[i].innerHTML = "★";
+        } else {
+            stars[i].classList.remove("selected");
+            stars[i].innerHTML = "☆";
+        }
+    }
+}
+</script>
+
 </body>
-
 </html>
